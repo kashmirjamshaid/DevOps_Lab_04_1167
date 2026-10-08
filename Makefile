@@ -48,5 +48,6 @@ out/report.txt: $(OUTPUTS) | $(OUT_DIR)
 	@echo "  REPORT $@"
 	@date > $@
 	@wc -l $^ >> $@
-count: build ## count the source files
+count: build ## report source files and built words
 	@ls -1 $(SRC_DIR)/*.txt | wc -l
+	@wc -w $(OUTPUTS) | tail -1
