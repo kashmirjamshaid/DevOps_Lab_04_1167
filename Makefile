@@ -48,3 +48,5 @@ out/report.txt: $(OUTPUTS) | $(OUT_DIR)
 	@echo "  REPORT $@"
 	@date > $@
 	@wc -l $^ >> $@
+count: build ## report how many words were built
+	@wc -w $(OUTPUTS) | tail -1
